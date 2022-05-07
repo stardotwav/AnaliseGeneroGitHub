@@ -38,13 +38,9 @@ Por fim, como parte do pré-processamento dos dados, foi necessário também par
 ### 🟡 Análise dos Dados
 Para começar a apresentar os dados, primeiramente iremos olhar para as comunidades extraídas, em que 5 delas são comunidades dedicadas às mulheres, sendo as 5 primeiras mostradas nas imagens, e as outras 5 comunidades são abertas. Ao analisarmos a imagem do gráfico com a imagem da tabela, é possível notar que comunidades como RailsGirls são muito diversas, mas sua comunidade similar aberta, sendo a RubyonRails, possuem uma diversidade baixa, sendo que ao analisar as comunidades foi possível notar que a maioria das mulheres presentes na comunidade RubyonRails também está presente na comunidade RailsGirls.
 
-<br>
+<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/tabelaDadosComunidades.png">
 
-<img align="left" hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/tabelaDadosComunidades.png">
-
-<img align="left" hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/mulheresHomensIndiceBlau.png">
-
-<br>
+<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/mulheresHomensIndiceBlau.png">
 
 Além disso, foram então respondidas algumas questões de pesquisa, que serão apresentadas agora de forma resumida. Para acessar as informações completas de cada questão de pesquisa, basta acessar o meu artigo publicado nos anais do meu curso [Artigo]().
 
@@ -54,8 +50,6 @@ Além disso, foram então respondidas algumas questões de pesquisa, que serão 
 
 Para essa questão de pesquisa, como apresentado no gráfico, foi levandado que das 1275 issues extraídas, 1071 (84%) foram reportadas por homens, e 204 (16%) por mulheres. Além disso, temos que dos 9151 comentários extraídos, 6897 (88%) foram postados por homens, e 2059 (22%) por mulheres.
 
-<br>
-
 <img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/issuesComentarios.png">
 
 <br>
@@ -64,11 +58,9 @@ Para essa questão de pesquisa, como apresentado no gráfico, foi levandado que 
 
 Ao analisarmos a base de dados, e utilizarmos de uma média, foi possível notar que a média de homens e mulheres tem uma diferença quase nula, em que os homens tem uma média de 0.03680, e as mulheres tem uma média de 0.03394, sendo então observado uma diferença entre ambos no intervalo das relevâncias, em que as mulheres possuem um intervalo menor, como apresentado nas imagens.
 
-<br>
+<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/comunidadesAbertas.png">
 
-<img align="left" hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/comunidadesAbertas.png">
-
-<img align="left" hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/comunidadesExclusivas.png">
+<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/comunidadesExclusivas.png">
 
 <br>
 
@@ -76,11 +68,9 @@ Ao analisarmos a base de dados, e utilizarmos de uma média, foi possível notar
 
 Ao analisar os dados extraídos, foi possivel notar que a relevância temática dos comentários, e a reputação dos autores não tinha relação, isso porque como podemos ver nas imagens, o intervalo de dados das reputações variam com todos os valores de relevância temática. Uma observação interessante que foi possivel ser realizada é a de que o intervalo de reputação das mulheres é menor que a de homens, tendo elas a sua concentração maior na faixa de $10^{3}$.
 
-<br>
+<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaReputacaoHomens.png">
 
-<img align="left" hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaReputacaoHomens.png">
-
-<img align="left" hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaReputacaoMulheres.png">
+<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaReputacaoMulheres.png">
 
 <br>
 
@@ -88,8 +78,6 @@ Ao analisar os dados extraídos, foi possivel notar que a relevância temática 
 
 Por fim, temos que o tempo de participação na plataforma também não está relacionado com a relevância temática, isso porque como mostrado nas imagens, temos que em todos os anos, obtivemos uma variação similar nos valores de relevância dos comentários. Sendo importante citar que as mulheres tem um tempo de permanência menor, em que elas se concentram em cerca de 4 a 10 anos, enquanto os homens tem uma grande presença até os 14 anos de participação.
 
-<br>
+<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaAnosPlataformaHomens.png">
 
-<img align="left" hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaAnosPlataformaHomens.png">
-
-<img align="left" hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaAnosPlataformaMulheres.png">
+<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaAnosPlataformaMulheres.png">
