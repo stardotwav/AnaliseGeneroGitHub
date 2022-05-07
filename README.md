@@ -16,7 +16,7 @@
 <br>
 
 ### 🔴 Extração dos Dados
-Para realizar a extração dos dados foi utilizado da [Biblioteca ColMiner RT](), que foi desenvolvida no contexto da minha iniciação científica, no NuPESSC. A biblioteca tem como objetivo extrair informações das comunicações de issue tracking da plataforma do GitHub, de forma que cada comentário ao ser analisado e seja atribuída uma relevância temática para o mesmo. O cálculo da relevância dos comentários leva em comparação a similaridade do comentário com a issue, sendo considerado o título e a descrição das mesma ($S_{CI}$), e a similaridade do comentário com a discussão, sendo a discussão dada pela união entre a issue e o comentário anterior ao analisado ($S_{CD}$), sendo isso expressado na equação abaixo.
+Para realizar a extração dos dados foi utilizado da [Biblioteca ColMiner RT](http://nupessc.caf.ufv.br/Colminer.html), que foi desenvolvida no contexto da minha iniciação científica, no NuPESSC. A biblioteca tem como objetivo extrair informações das comunicações de issue tracking da plataforma do GitHub, de forma que cada comentário ao ser analisado e seja atribuída uma relevância temática para o mesmo. O cálculo da relevância dos comentários leva em comparação a similaridade do comentário com a issue, sendo considerado o título e a descrição das mesma ($S_{CI}$), e a similaridade do comentário com a discussão, sendo a discussão dada pela união entre a issue e o comentário anterior ao analisado ($S_{CD}$), sendo isso expressado na equação abaixo.
 
 $RT = \frac{S_{CI} + S_{CD}}{2}$
 
@@ -25,13 +25,13 @@ Depois de calculado relevância temática de todos os comentários de todas as i
 <br>
 
 ### 🟠 Pré-Processamento dos Dados
-Após extraídos os dados, pensando agora nas questões de gênero do trabalho, temos que foi necessário identificar o gênero de cada um dos desenvolvedores envolvidos, em que para isso foi utilizado da ferramenta [NamSor](). O gênero dos desenvolvedores levou em consideração tanto os autores das issues, quanto os autores de comentários.
+Após extraídos os dados, pensando agora nas questões de gênero do trabalho, temos que foi necessário identificar o gênero de cada um dos desenvolvedores envolvidos, em que para isso foi utilizado da ferramenta [NamSor](https://namsor.app/). O gênero dos desenvolvedores levou em consideração tanto os autores das issues, quanto os autores de comentários.
 
 Além disso, pensando em análises sobre o comportamento em diferentes tipos de ambientes, diversos e não diversos, foi contabilizado o número de mulheres e homens em cada comunidade que se teve repositórios extraídos. Com essa informação então foi possível realizar o cálculo do Índice Blau, que nos indica o nível de diversidade em cada comunidade, sendo que 0 indica a falta de diversidade, e 0.5 que o time está com o mesmo número de homens e mulheres, ou seja, muito diverso. O Índice Blau é dado pela equação apresentada abaixo.
 
 $Blau = 1 - \sum^{N}_{i=1} P^{2}_{i}$
 
-Por fim, como parte do pré-processamento dos dados, foi necessário também para responder às questões de pesquisa saber a reputação dos desenvolvedores que responderam à comentários no issue tracking, e visto que a plataforma do GitHub não realiza o cálculo dessa informação, foi utilizado da plataforma do [GitScore]() para calcular o mesmo.
+Por fim, como parte do pré-processamento dos dados, foi necessário também para responder às questões de pesquisa saber a reputação dos desenvolvedores que responderam à comentários no issue tracking, e visto que a plataforma do GitHub não realiza o cálculo dessa informação, foi utilizado da plataforma do [GitScore](http://www.gitscore.com/) para calcular o mesmo.
 
 <br>
 
