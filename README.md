@@ -1,6 +1,6 @@
 # Trabalho de Conclusão de Curso
 
-<img align="left" hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/ola.gif">
+<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/ola.gif">
 
 **Tema:** Relevância Temática dos Comentários e Diversidade de Gênero em Projetos Open Source
 
