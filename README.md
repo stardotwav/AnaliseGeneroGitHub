@@ -12,7 +12,7 @@
 <br>
 
 ### 🔴 Extração dos Dados
-Para realizar a extração dos dados foi utilizado da [Biblioteca ColMiner RT](http://nupessc.caf.ufv.br/Colminer.html), que foi desenvolvida no contexto da minha iniciação científica, no NuPESSC. A biblioteca tem como objetivo extrair informações das comunicações de issue tracking da plataforma do GitHub, de forma que cada comentário ao ser analisado e seja atribuída uma relevância temática para o mesmo. O cálculo da relevância dos comentários leva em comparação a similaridade do comentário com a issue, sendo considerado o título e a descrição das mesma ($S_{CI}$), e a similaridade do comentário com a discussão, sendo a discussão dada pela união entre a issue e o comentário anterior ao analisado ($S_{CD}$), sendo isso expressado na equação abaixo.
+Ao extrair os dados dos repositórios do GitHub através da API da platforma foi realizado o cálculo da relevância dos comentários leva em comparação a similaridade do comentário com a issue, sendo considerado o título e a descrição das mesma ($S_{CI}$), e a similaridade do comentário com a discussão, sendo a discussão dada pela união entre a issue e o comentário anterior ao analisado ($S_{CD}$), sendo isso expressado na equação abaixo.
 
 $RT = \frac{S_{CI} + S_{CD}}{2}$
 
