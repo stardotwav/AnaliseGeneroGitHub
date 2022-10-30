@@ -1,79 +1,50 @@
-# Trabalho de Conclusão de Curso
+# Análise da Participação por Gênero no Issue Tracking do Github
 
 <img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/ola.gif">
 
-**Tema:** Relevância Temática dos Comentários e Diversidade de Gênero em Projetos Open Source
+Esse projeto foi desenvolvido durante meu trabalho de conclusão de curso. Neste repositório estão armazenados os dados que realizei a extração, e tratamento, de forma que pudesse ser feita a análise sobre a qualidade e quantidade da participação de homens em mulheres em issues da plataforma do GitHub.
 
-**Resumo:** Este trabalho analisa a participação feminina em termos da relevância temática dos comentários postados no ambiente de issue tracking do GitHub. O trabalho também investiga possíveis relações entre a relevância temática e outras métricas ligadas ao desenvolvedor, como reputação, tempo de plataforma e número de issues reportadas. Foram analisados dados de 5 comunidades open source abertas, e 5 dedicadas às mulheres. Os resultados apontam que, na média, a relevância dos comentários feitos por mulheres é similar à dos homens, se mostrando igualmente capazes, porém demonstram uma representatividade e participação muito baixas, tendo apenas
-22% dos comentários postados e 16% das issues reportadas.
 
-**Áreas de Conhecimento:** Ciência dos Dados e Engenharia de Software
 
 <br>
 
-### 🔴 Extração dos Dados
-Ao extrair os dados dos repositórios do GitHub através da API da platforma foi realizado o cálculo da relevância dos comentários leva em comparação a similaridade do comentário com a issue, sendo considerado o título e a descrição das mesma ($S_{CI}$), e a similaridade do comentário com a discussão, sendo a discussão dada pela união entre a issue e o comentário anterior ao analisado ($S_{CD}$), sendo isso expressado na equação abaixo.
+**☕️ Extração e Tratamento dos Dados**
+
+Como primeira etapa do trabalho foi realizado a seleção dos repositórios a serem extraídos pelo trabalho, para isso foram selecionados repositórios de projetos open source na plataforma do GitHub que possuissem alguma correspondência de temas com projetos open source que trabalham para realizar a inclusão e permanência de mulheres na área da computação. Abaixo estão listados os projetos utilizados então na extração dos dados.
+
+
+Após extraídos os dados, foi realizado o cálculo da relevância temática de cada um dos comentários das issues, em que a métrica da relevância temática é calculada utilizando do conceito da similaridade de cossenos, que realiza a verificação da similaridade de um comentário com a sua issue em questão, sendo expressado pela fórmula:
 
 $RT = \frac{S_{CI} + S_{CD}}{2}$
 
-Depois de calculado relevância temática de todos os comentários de todas as issues de um determinado repositório da plataforma do GitHub os dados são salvos em um arquivo .csv. É importante citar para as análises realizadas nesse trabalho foram usados apenas de issues fechadas, para evitar que os dados necessitassem ser atualizados ao longo da pesquisa.
+em que, ($S_{CI}$) é a similaridade do comentário em relação à issue, considerando seu título e descrição, e ($S_{CD}$) sendo a similaridade do comentário com a discussão, que considerada além da issue os comentários anteriores.
+
+Por fim, durante a extração e tratamento dos dados foi feito a verificação do gênero de cada uma das pessoas desenvolvedoras participantes das issues, tanto em comentários, quanto na postagem de issues, utilizando da ferramenta [NamSor](https://namsor.app/), que ao enviar o nome da pessoa desenvolvedora ele retorna o gênero ao qual o mesmo possui maior propabilidade de ser, dessa forma, como é utilizado apenas do nome, os gêneros possíveis são feminino e masculino. Além disso, também é calculado a reputação do desenvolvedor, que leva em consideração o cálculo feito pela plataforma do [GitScore](http://www.gitscore.com/).
 
 <br>
 
-### 🟠 Pré-Processamento dos Dados
-Após extraídos os dados, pensando agora nas questões de gênero do trabalho, temos que foi necessário identificar o gênero de cada um dos desenvolvedores envolvidos, em que para isso foi utilizado da ferramenta [NamSor](https://namsor.app/). O gênero dos desenvolvedores levou em consideração tanto os autores das issues, quanto os autores de comentários.
+**🎲 Sobre os Dados**
 
-Além disso, pensando em análises sobre o comportamento em diferentes tipos de ambientes, diversos e não diversos, foi contabilizado o número de mulheres e homens em cada comunidade que se teve repositórios extraídos. Com essa informação então foi possível realizar o cálculo do Índice Blau, que nos indica o nível de diversidade em cada comunidade, sendo que 0 indica a falta de diversidade, e 0.5 que o time está com o mesmo número de homens e mulheres, ou seja, muito diverso. O Índice Blau é dado pela equação apresentada abaixo.
+Para auxiliar no processo de análises futuras dos dados aqui armazenados, abaixo é deixado uma tabela com a descrição de cada uma colunas dos dois datasets gerados durante a extração dos dados. Primeiramente temos as informações sobre os dados de comentários das issues, em que é importante ressaltar que todas as colunas que possuem o nome issue inclusa possuem informações extraídas pela API do GitHub, ou seja, questões como o título e descrição da issue.
 
-$Blau = 1 - \sum^{N}_{i=1} P^{2}_{i}$
+NumeroComentario | Comentario | DataComentario | RelevanciaTematica | Reputacao | AnosPlataforma | Genero
+:------: | :------: | :------: | :------: | :------: | :------: | :------: |
+Inteiro, indicando o número do comentário na issue | String, contendo o conteúdo do comentário | Date, contendo a data de postagem do comentário | Float, valor calculado da relevância temática do comentário | Int, valor calculado da reputação da pessoa desenvolvedora que realizou a postagem do comentário | Int, número de anos de participação da pessoa desenvolvedora que realizou a postagem do comentário | String, gênero da pessoa desenvolvedora que realizou a postagem do comentário
 
-Por fim, como parte do pré-processamento dos dados, foi necessário também para responder às questões de pesquisa saber a reputação dos desenvolvedores que responderam à comentários no issue tracking, e visto que a plataforma do GitHub não realiza o cálculo dessa informação, foi utilizado da plataforma do [GitScore](http://www.gitscore.com/) para calcular o mesmo.
+E segundamente, e finalmente, as informações sobre os dados das issues em si.
 
-<br>
-
-### 🟡 Análise dos Dados
-Para começar a apresentar os dados, primeiramente iremos olhar para as comunidades extraídas, em que 5 delas são comunidades dedicadas às mulheres, sendo as 5 primeiras mostradas nas imagens, e as outras 5 comunidades são abertas. Ao analisarmos a imagem do gráfico com a imagem da tabela, é possível notar que comunidades como RailsGirls são muito diversas, mas sua comunidade similar aberta, sendo a RubyonRails, possuem uma diversidade baixa, sendo que ao analisar as comunidades foi possível notar que a maioria das mulheres presentes na comunidade RubyonRails também está presente na comunidade RailsGirls.
-
-<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/tabelaDadosComunidades.png">
-
-<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/mulheresHomensIndiceBlau.png">
-
-Além disso, foram então respondidas algumas questões de pesquisa, que serão apresentadas agora de forma resumida. Para acessar as informações completas de cada questão de pesquisa, basta acessar o meu artigo publicado nos anais do meu curso [Artigo]().
+NumeroIssue | Genero
+:------: | :------: | 
+Int, contendo o número da issue em questão | Strig, contendo o gênero da pessoa desenvolvedora que criou a issue em questão
 
 <br>
 
-**🟢 1. Qual a diferença de participação de homens e mulheres em termos de issues e comentários associados?**
+**📊 Análise dos Dados**
 
-Para essa questão de pesquisa, como apresentado no gráfico, foi levandado que das 1275 issues extraídas, 1071 (84%) foram reportadas por homens, e 204 (16%) por mulheres. Além disso, temos que dos 9151 comentários extraídos, 6897 (88%) foram postados por homens, e 2059 (22%) por mulheres.
-
-<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/issuesComentarios.png">
+Para a análise dos dados foi utilizado do Jupyter Notebook, gerando assim diversos gráficos com informações relevantes sobre os dados extraídos. Tais análises levaram em consideração os tópicos levantados durante a escrita do artigo para defesa do trabalho de conclusão de curso, sendo os pontos mais importantes entender a diferença na qualidade dos comentários feitos por homens e mulheres, a quantidade de comentários e issues postados por homens e mulheres, e a relação da métrica de relevância temática dos comentários em relação aos anos de participação das pessoas desenvolvedoras na plataforma do GitHub e a reputação das mesmas.
 
 <br>
 
-**🔵 2. Existe diferença entre a relevância dos comentários postados por homens e mulheres?**
+**⭐️ Resultados**
 
-Ao analisarmos a base de dados, e utilizarmos de uma média, foi possível notar que a média de homens e mulheres tem uma diferença quase nula, em que os homens tem uma média de 0.03680, e as mulheres tem uma média de 0.03394, sendo então observado uma diferença entre ambos no intervalo das relevâncias, em que as mulheres possuem um intervalo menor, como apresentado nas imagens.
-
-<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/comunidadesAbertas.png">
-
-<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/comunidadesExclusivas.png">
-
-<br>
-
-**🟣 3. Existe relação entre a relevância dos comentários e a reputação do autor?**
-
-Ao analisar os dados extraídos, foi possivel notar que a relevância temática dos comentários, e a reputação dos autores não tinha relação, isso porque como podemos ver nas imagens, o intervalo de dados das reputações variam com todos os valores de relevância temática. Uma observação interessante que foi possivel ser realizada é a de que o intervalo de reputação das mulheres é menor que a de homens, tendo elas a sua concentração maior na faixa de $10^{3}$.
-
-<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaReputacaoHomens.png">
-
-<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaReputacaoMulheres.png">
-
-<br>
-
-**⚪️ 4. Existe relação entre a relevância dos comentários e o tempo de participação na plataforma?**
-
-Por fim, temos que o tempo de participação na plataforma também não está relacionado com a relevância temática, isso porque como mostrado nas imagens, temos que em todos os anos, obtivemos uma variação similar nos valores de relevância dos comentários. Sendo importante citar que as mulheres tem um tempo de permanência menor, em que elas se concentram em cerca de 4 a 10 anos, enquanto os homens tem uma grande presença até os 14 anos de participação.
-
-<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaAnosPlataformaHomens.png">
-
-<img hspace="50" vspace="50" height="200" src="https://github.com/stardotwav/AnaliseGeneroGitHub/blob/main/Imagens/relevanciaTematicaAnosPlataformaMulheres.png">
+Os resultados obtidos durante as análises dos dados até o momento foram publicados nos [anais]() do curso de Ciência da Computação da UFV/Florestal, e no Women in Technology ([WiT]()) em formato de artigo resumido. Além disso, o trabalho recebeu o 🥇 prêmio de melhor artigo resumido no WiT na edição de 2022!
