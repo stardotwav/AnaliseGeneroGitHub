@@ -42,9 +42,3 @@ Int, contendo o número da issue em questão | Strig, contendo o gênero da pess
 ### **📊 Análise dos Dados**
 
 Para a análise dos dados foi utilizado do Jupyter Notebook, gerando assim diversos gráficos com informações relevantes sobre os dados extraídos. Tais análises levaram em consideração os tópicos levantados durante a escrita do artigo para defesa do trabalho de conclusão de curso, sendo os pontos mais importantes entender a diferença na qualidade dos comentários feitos por homens e mulheres, a quantidade de comentários e issues postados por homens e mulheres, e a relação da métrica de relevância temática dos comentários em relação aos anos de participação das pessoas desenvolvedoras na plataforma do GitHub e a reputação das mesmas.
-
-<br>
-
-### **⭐️ Resultados**
-
-Os resultados obtidos durante as análises dos dados até o momento foram publicados nos [anais]() do curso de Ciência da Computação da UFV/Florestal, e no Women in Technology ([WiT](https://sol.sbc.org.br/index.php/wit/article/view/20873)) em formato de artigo resumido. Além disso, o trabalho recebeu o 🥇 prêmio de melhor artigo resumido no WiT na edição de 2022!
